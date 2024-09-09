@@ -1,0 +1,16 @@
+# Dockerfile.server
+
+# Используем официальный образ Python
+FROM python:3.9-slim
+
+# Устанавливаем необходимые зависимости
+RUN pip install websockets
+
+# Копируем серверный скрипт в контейнер
+COPY server.py /app/server.py
+
+# Переходим в рабочую директорию
+WORKDIR /app
+
+# Указываем команду для запуска WebSocket сервера
+CMD ["python", "server.py"]

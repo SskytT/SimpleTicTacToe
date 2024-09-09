@@ -1,0 +1,11 @@
+# Dockerfile.web
+
+# Используем официальный образ Nginx
+FROM nginx:latest
+
+# Копируем ваши статические файлы в директорию Nginx
+COPY index.html /usr/share/nginx/html/index.html
+COPY game.js /usr/share/nginx/html/game.js
+
+# Копируем конфигурационный файл для Nginx
+COPY nginx.conf /etc/nginx/nginx.conf

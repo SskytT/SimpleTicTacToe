@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  websocket-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - "8765:8765"
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    ports:
+      - "80:80"
